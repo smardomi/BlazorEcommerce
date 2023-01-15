@@ -1,0 +1,56 @@
+﻿<h3>ProductList</h3>
+
+<ul class="list-unstyled">
+    @foreach (var product in Products)
+    {
+        <li class="media my-3">
+            <div class="media-img-wrapper mr-2">
+                <a href="/product/@product.Id">
+                    <img class="media-img" src="@product.ImageUrl" alt="@product.Title" />
+                </a>
+            </div>
+            <div class="media-body">
+                <a href="/product/@product.Id">
+                    <h4 class="mb-0">@product.Title</h4>
+                </a>
+                <p>@product.Description</p>
+                <h5 class="price">
+                   @product.Price
+                </h5>
+            </div>
+        </li>
+    }
+</ul>
+
+@code {
+
+    private static List<Product> Products = new List<Product>
+    {
+        new Product
+        {
+            Id = 1,
+            Title = "iPhone 14",
+            Description = "Apple iPhone 14 smartphone. Announced Sep 2022. Features 6.1″ display, Apple A15 Bionic chipset",
+            ImageUrl = "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14.jpg",
+            Price = 799.99
+        },
+        new Product
+        {
+            Id = 2,
+            Title = "Galaxy Note 22 Ultra",
+            Description = "Samsung Galaxy Note 22 Ultra Specifications: · Display: 6.9-inch Dynamic AMOLED 2X with 120Hz refresh rate",
+            ImageUrl = "https://m.media-amazon.com/images/I/61U6oC65TTL._AC_UY327_FMwebp_QL65_.jpg",
+            Price = 909
+        },
+        new Product
+        {
+            Id = 3,
+            Title = "Xiaomi 12 Pro",
+            Description = "Xiaomi 12 Pro Android smartphone. Announced Dec 2021. Features 6.73″ display, Snapdragon 8 Gen 1 chipset, 4600 mAh battery",
+            ImageUrl = "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-12-pro.jpg",
+            Price = 590
+        },
+    };
+
+
+}
